@@ -1,0 +1,10 @@
+@use "colors";
+
+@use "reset.scss";
+@use "layout.scss";
+@use "header.scss";
+@use "hero.scss";
+
+.button {
+  background-color: colors.$light-gray;
+}
