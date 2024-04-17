@@ -1,0 +1,15 @@
+.third {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  .third_text_wrapper {
+    text-align: center;
+    .third_header {
+      font-size: 1.25rem;
+    }
+    .third_description {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+}

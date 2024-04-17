@@ -23,7 +23,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ menu }) => {
           <img src={logo} alt="логотип сайта" />
           <p>testLab</p>
         </a>
-        <div onClick={() => dispatch(toggleMenu())}>
+        <div className="menu_button" onClick={() => dispatch(toggleMenu())}>
           {menuIsOpen && <img className="close" src={x} alt="закрыть меню" />}
         </div>
       </li>

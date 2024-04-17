@@ -1,0 +1,86 @@
+@use "colors";
+
+.contact_form {
+  padding: 1.5rem 1rem;
+  .contact_form_header {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+  .form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    .input_wrapper {
+      width: 100%;
+      position: relative;
+      .lable {
+        position: absolute;
+        top: 1.25rem;
+        left: 1rem;
+      }
+      .text-input {
+        width: 100%;
+        display: block;
+        border-radius: 0.25rem;
+        border: 2px solid colors.$mid-grey;
+        background: colors.$white;
+        transition: all 0.3s ease;
+        padding: 1rem;
+        height: 4rem;
+
+        &.valid,
+        &:focus.valid {
+          border-color: colors.$green-success;
+        }
+        &.invalid,
+        &:focus.invalid {
+          border-color: colors.$dangerous;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: colors.$primary;
+          background-color: colors.$white;
+        }
+        &:empty {
+          background-color: colors.$extralight-gray;
+          &:focus {
+            background-color: colors.$white;
+          }
+        }
+
+        &:focus + label {
+          top: -0.8rem;
+          background-color: colors.$white;
+          padding: 2px 4px;
+          transition: all 0.3s ease;
+        }
+        &.not_empty + label {
+          top: -0.8rem;
+          background-color: colors.$white;
+          padding: 2px 4px;
+          transition: all 0.3s ease;
+        }
+      }
+      .validation_status {
+        position: absolute;
+        top: 1.35rem;
+        right: 1rem;
+      }
+    }
+    .helper {
+      font-size: 0.75rem;
+      &.valid {
+        color: colors.$green-success;
+      }
+      &.invalid {
+        color: colors.$dangerous;
+      }
+    }
+    .button {
+      margin: 0 auto;
+      width: fit-content;
+    }
+  }
+}

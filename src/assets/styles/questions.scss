@@ -1,0 +1,41 @@
+@use "colors";
+
+.questions {
+  padding: 2rem 1rem;
+
+  .questions_header {
+    font-weight: bold;
+    text-align: center;
+  }
+  .accordion {
+    .accordion_collapsed {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 0;
+
+      .accordion_title {
+        font-weight: bold;
+      }
+      .accordion_toggle {
+        transform: rotate(0);
+        transition: transform 0.1s linear 0s;
+        &.turned {
+          transform: rotate(45deg);
+          transition: transform 0.1s linear 0s;
+        }
+      }
+    }
+    .accordion_content {
+      overflow-y: hidden;
+      transition: all 0.35s;
+      &.opened {
+        margin-bottom: 0.75rem;
+      }
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid colors.$light-gray;
+    }
+  }
+}

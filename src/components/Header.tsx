@@ -27,7 +27,7 @@ const Header = () => {
             <img src={logo} alt="логотип сайта" />
             <p>testLab</p>
           </a>
-          <div onClick={() => dispatch(toggleMenu())}>
+          <div className="menu_button" onClick={() => dispatch(toggleMenu())}>
             <img className="open" src={menu} alt="открыть меню" />
           </div>
         </li>

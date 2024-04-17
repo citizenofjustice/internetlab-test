@@ -4,6 +4,12 @@
 @use "layout.scss";
 @use "header.scss";
 @use "hero.scss";
+@use "tasks.scss";
+@use "third.scss";
+@use "reviews.scss";
+@use "questions.scss";
+@use "respondents.scss";
+@use "form.scss";
 
 .button {
   background-color: colors.$light-gray;

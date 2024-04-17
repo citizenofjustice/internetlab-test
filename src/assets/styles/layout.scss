@@ -1,2 +1,12 @@
 .layout {
+  overflow-x: hidden;
+  .top {
+    height: 100vh;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.75rem;
+  }
 }

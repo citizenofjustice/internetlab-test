@@ -1,0 +1,54 @@
+@use "colors";
+
+.reviews {
+  padding: 1rem;
+  background-color: colors.$extralight-gray;
+
+  .review_header {
+    text-align: center;
+  }
+  .review {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: white;
+    box-shadow: 0px 5px 24px rgba(0, 0, 0, 0.1);
+    padding: 1.375rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    .review_author {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      .author_image {
+        margin-top: 0.25rem;
+        border-radius: 50%;
+        max-width: 44px;
+      }
+      .author_name {
+        font-weight: bold;
+      }
+      .author_city {
+        font-size: small;
+      }
+    }
+    .review_content {
+      font-size: smaller;
+    }
+  }
+  .slider_controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: colors.$mid-grey;
+      &.active {
+        background-color: colors.$primary;
+      }
+    }
+  }
+}
