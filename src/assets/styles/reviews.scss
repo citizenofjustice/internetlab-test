@@ -1,8 +1,45 @@
 @use "colors";
+@use "media";
 
 .reviews {
   padding: 1rem;
   background-color: colors.$extralight-gray;
+
+  .slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+
+    .slide {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+      transform: scale(0.98);
+      &:hover {
+        transform: scale(1);
+      }
+    }
+
+    .slider_button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      padding: 1rem;
+      z-index: 1;
+
+      @media screen and (max-width: media.$desktop) {
+        display: none;
+      }
+
+      &.slider_button_prev {
+        left: 0;
+      }
+      &.slider_button_next {
+        right: 0;
+      }
+    }
+  }
 
   .review_header {
     text-align: center;
@@ -36,7 +73,7 @@
       font-size: smaller;
     }
   }
-  .slider_controls {
+  .slider_indicators {
     display: flex;
     justify-content: center;
     gap: 1rem;
