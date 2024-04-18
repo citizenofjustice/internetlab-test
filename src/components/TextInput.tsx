@@ -40,8 +40,8 @@ const TextInput: React.FC<TextInputProps> = ({
           value={inputValue}
           type={type}
           className={`text-input ${inputValue.length > 0 ? "not_empty" : ""} ${
-            check?.isValid ? "valid" : "invalid"
-          }`}
+            check?.isValid === true ? "valid" : ""
+          } ${check?.isValid === false ? "invalid" : ""}`}
           autoComplete="off"
           id={id}
         />
