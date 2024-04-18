@@ -77,7 +77,9 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
-        a:visited {
+        a,
+        a:visited,
+        a:hover {
           color: typography.$white;
         }
         a:hover {
