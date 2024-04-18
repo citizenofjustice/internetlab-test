@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/internetlab-test/static/css/main.fbed98f2.css",
+    "main.js": "/internetlab-test/static/js/main.ac227ecf.js",
+    "static/js/453.694c6110.chunk.js": "/internetlab-test/static/js/453.694c6110.chunk.js",
+    "static/media/hero.jpg": "/internetlab-test/static/media/hero.adc6593cafa92d42310c.jpg",
+    "static/media/driver.png": "/internetlab-test/static/media/driver.e4946b01026e06bc2b09.png",
+    "static/media/manGlasses.png": "/internetlab-test/static/media/manGlasses.3c39c5266778957e4431.png",
+    "static/media/third.png": "/internetlab-test/static/media/third.c27284f276062782271b.png",
+    "static/media/cargoTruck.png": "/internetlab-test/static/media/cargoTruck.c65771d6695b343110ae.png",
+    "static/media/woman.png": "/internetlab-test/static/media/woman.3fb6b5f50eab30ba72af.png",
+    "static/media/GraphikLCG-Semibold.woff2": "/internetlab-test/static/media/GraphikLCG-Semibold.2b854e7591466b32b210.woff2",
+    "static/media/GraphikLCG-Regular.woff2": "/internetlab-test/static/media/GraphikLCG-Regular.92a1ff709799ec31f9f0.woff2",
+    "static/media/truck.svg": "/internetlab-test/static/media/truck.691a849859e1d60ccd145b93baf7f039.svg",
+    "static/media/bag.svg": "/internetlab-test/static/media/bag.3c495d0854e1ae9ba5edefdbe1f68506.svg",
+    "static/media/pointer.svg": "/internetlab-test/static/media/pointer.a482683ab7dc6739a8908345e7de7b16.svg",
+    "static/media/stock.svg": "/internetlab-test/static/media/stock.f473cc29b0d5041a07d1db9e185fcb8a.svg",
+    "static/media/plusRounded.svg": "/internetlab-test/static/media/plusRounded.10ff148a6ce156ba479c749a59505f63.svg",
+    "static/media/chevronR.svg": "/internetlab-test/static/media/chevronR.ddb812008961fd3277604d646b54bd5e.svg",
+    "index.html": "/internetlab-test/index.html",
+    "static/media/check.svg": "/internetlab-test/static/media/check.77a93bfb5ca5e1f1439a9479c83f2f56.svg",
+    "static/media/crossRed.svg": "/internetlab-test/static/media/crossRed.bad2af672d8e102adb39f52d0cd80280.svg",
+    "static/media/x.svg": "/internetlab-test/static/media/x.0e20665fa866ccde38d699d33fb250be.svg",
+    "static/media/menu.svg": "/internetlab-test/static/media/menu.ee8c5b677a419c13718d2b6411067a85.svg",
+    "static/media/logo.svg": "/internetlab-test/static/media/logo.7e80e032a00adc57162ffa8cfefdee56.svg",
+    "main.fbed98f2.css.map": "/internetlab-test/static/css/main.fbed98f2.css.map",
+    "main.ac227ecf.js.map": "/internetlab-test/static/js/main.ac227ecf.js.map",
+    "453.694c6110.chunk.js.map": "/internetlab-test/static/js/453.694c6110.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbed98f2.css",
+    "static/js/main.ac227ecf.js"
+  ]
+}
