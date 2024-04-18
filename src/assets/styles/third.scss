@@ -1,15 +1,58 @@
+@use "typography";
+@use "media";
+
 .third {
-  margin: 1rem 0;
+  margin: 3.5rem 0;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  max-width: 76rem;
+
+  .promo_wrapper {
+    flex-basis: 50%;
+  }
   .third_text_wrapper {
+    flex-basis: 50%;
     text-align: center;
     .third_header {
+      margin-bottom: 0.75rem;
+      font-weight: typography.$font-bold;
+      color: typography.$black;
       font-size: 1.25rem;
+      line-height: 1.5rem;
     }
     .third_description {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      font-weight: typography.$font-regular;
+      color: typography.$dark-gray;
+      font-size: 1rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+@media screen and (min-width: media.$tablet) {
+  .third {
+    margin: 3.5rem auto;
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+    .third_text_wrapper {
+      text-align: start;
+    }
+  }
+}
+@media screen and (min-width: media.$desktop) {
+  .third {
+    margin: 5rem auto;
+    flex-direction: row-reverse;
+    .third_text_wrapper {
+      .third_header {
+        line-height: 2.5rem;
+        font-size: 2rem;
+      }
     }
   }
 }

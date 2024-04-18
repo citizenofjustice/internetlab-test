@@ -48,7 +48,7 @@ const questionsData: QuestionAnswer[] = [
 
 const Questions = () => {
   return (
-    <section className="questions">
+    <section id="questions" className="questions">
       <h2 className="questions_header">Вопросы и ответы</h2>
       {questionsData.map((questionData, index) => (
         <Accordion

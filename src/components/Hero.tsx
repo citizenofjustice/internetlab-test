@@ -1,4 +1,5 @@
 import hero from "../assets/images/hero.jpg";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -13,7 +14,7 @@ const Hero = () => {
             <h1>Говорят, никогда не поздно сменить профессию</h1>
             <p>Сделай круто тестовое задание и у тебя получится</p>
           </div>
-          <button className="button">Проще простого!</button>
+          <Button className="button_secondary">Проще простого!</Button>
         </div>
       </div>
     </section>

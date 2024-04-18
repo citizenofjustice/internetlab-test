@@ -31,10 +31,12 @@ const infoBlocks: Info[] = [
 const RespondentsStats = () => {
   return (
     <section className="respondents_info">
-      <div className="info_grid">
-        {infoBlocks.map((info, index) => (
-          <InfoBlock title={info.title} content={info.content} key={index} />
-        ))}
+      <div className="grid_wrapper">
+        <div className="info_grid">
+          {infoBlocks.map((info, index) => (
+            <InfoBlock title={info.title} content={info.content} key={index} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -13,10 +13,12 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   return (
     <>
       <div className="accordion">
-        <div className="accordion_collapsed">
+        <div
+          onClick={() => setIsOpen((prevValue) => !prevValue)}
+          className="accordion_collapsed"
+        >
           <p className="accordion_title">{title}</p>
           <img
-            onClick={() => setIsOpen((prevValue) => !prevValue)}
             src={plus}
             className={`accordion_toggle ${isOpen ? "turned" : ""}`}
             alt={isOpen ? "закрыть" : "открыть"}

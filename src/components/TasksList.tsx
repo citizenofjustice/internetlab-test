@@ -41,7 +41,7 @@ const tasks: Task[] = [
 
 const TasksList = () => {
   return (
-    <section className="tasks">
+    <section id="how-it-works" className="tasks">
       <h2 className="tasks_header">Как это работает</h2>
       <ul className="tasks_list">
         {tasks.map((task, index) => (

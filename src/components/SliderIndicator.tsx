@@ -14,11 +14,9 @@ const SliderIndicator: React.FC<SliderIndicatorProps> = ({
   return (
     <div className="slider_indicators">
       {slides.map((_, index) => (
-        <div
-          className={`dot ${index === activeIndex ? "active" : ""}`}
-          onClick={() => onClick(index)}
-          key={index}
-        />
+        <div className="dot_wrapper" onClick={() => onClick(index)} key={index}>
+          <div className={`dot ${index === activeIndex ? "active" : ""}`} />
+        </div>
       ))}
     </div>
   );

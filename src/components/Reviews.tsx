@@ -38,14 +38,14 @@ const reviewItems: Review[] = [
   {
     avatar: woman,
     name: "Юлия Семенова",
-    city: "",
+    city: "Кисловодск",
     reviewContent:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quas neque, repellat, maiores, ab alias enim velit reiciendis possimus quam dolorum expedita. Laudantium ea quod ipsam soluta? Vel, doloribus odit.",
   },
   {
     avatar: manGlasses,
     name: "Константин Романов",
-    city: "",
+    city: "Москва",
     reviewContent:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quas neque, repellat, maiores, ab alias enim velit reiciendis possimus quam dolorum expedita. Laudantium ea quod ipsam soluta? Vel, doloribus odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quas neque, repellat, maiores, ab alias enim velit reiciendis possimus quam dolorum expedita. Laudantium ea quod ipsam soluta? Vel, doloribus odit.",
   },

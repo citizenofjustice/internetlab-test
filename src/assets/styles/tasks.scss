@@ -1,14 +1,27 @@
+@use "typography";
+@use "media";
+
 .tasks {
   margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .tasks_header {
     padding: 1rem;
     text-align: center;
+    color: typography.$black;
+    font-weight: typography.$font-bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
+
   .tasks_list {
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 76rem;
 
     .task_item {
       display: flex;
@@ -17,8 +30,42 @@
 
       .task_text_wrapper {
         .task_title {
-          font-weight: bold;
+          font-weight: typography.$font-bold;
+          font-size: 1rem;
+          line-height: 1.5rem;
         }
+        .task_text {
+          font-weight: typography.$font-regular;
+          font-size: 0.875rem;
+          line-height: 1.5rem;
+          color: typography.$dark-gray;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: media.$tablet) {
+    .tasks_header {
+      font-weight: typography.$font-bold;
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+    .tasks_list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+  @media screen and (min-width: media.$desktop) {
+    .tasks_list {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      .task_item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
       }
     }
   }

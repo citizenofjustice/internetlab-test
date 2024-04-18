@@ -1,90 +1,164 @@
-@use "colors";
+@use "typography";
 @use "media";
 
 .reviews {
-  padding: 1rem;
-  background-color: colors.$extralight-gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: typography.$extralight-gray;
+  padding: 1.75rem 0;
 
-  .slider {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
+  .review_header {
+    font-weight: typography.$font-bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: center;
+  }
 
-    .slide {
-      width: 100%;
-      height: auto;
-      transition: transform 0.3s ease-in-out;
-      transform: scale(0.98);
-      &:hover {
-        transform: scale(1);
-      }
-    }
+  .slider_wrapper {
+    display: flex;
 
     .slider_button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       border: none;
-      padding: 1rem;
+      background-color: transparent;
       z-index: 1;
-
-      @media screen and (max-width: media.$desktop) {
-        display: none;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+        filter: invert(29%) sepia(77%) saturate(2327%) hue-rotate(201deg)
+          brightness(98%) contrast(88%);
       }
 
       &.slider_button_prev {
         left: 0;
+        img {
+          width: 3rem;
+          height: 3rem;
+          transform: rotate(180deg);
+        }
       }
       &.slider_button_next {
         right: 0;
+        img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+
+    .slider {
+      width: 280px;
+      overflow: hidden;
+      position: relative;
+
+      .slides_container {
+        display: flex;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        transition: transform 0.3s ease-in-out;
+
+        .review {
+          display: flex;
+          min-width: calc(100% - 3rem);
+          max-width: calc(100% - 3rem);
+          margin: 1rem 1.5rem;
+          gap: 0.75rem;
+          flex-direction: column;
+          background-color: white;
+          box-shadow: 0px 5px 24px rgba(0, 0, 0, 0.1);
+          padding: 1.375rem;
+          border-radius: 0.5rem;
+          position: relative;
+          visibility: visible;
+          transition: all 0.3s;
+          opacity: 1;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .review_author {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            .author_image {
+              margin-top: 0.25rem;
+              border-radius: 50%;
+              max-width: 44px;
+              aspect-ratio: 1/1;
+              object-fit: cover;
+            }
+            .author_name {
+              font-weight: bold;
+            }
+            .author_city {
+              font-size: small;
+            }
+          }
+          .review_content {
+            font-size: smaller;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: media.$small-mobile) {
+      .slider {
+        width: 320px;
+      }
+    }
+
+    @media screen and (min-width: media.$tablet) {
+      .review_header {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+      }
+
+      .slider {
+        width: 640px;
+        .slides_container {
+          .review {
+            min-width: calc(50% - 3rem);
+            max-width: calc(50% - 3rem);
+            margin: 1rem 1.5rem;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: media.$desktop) {
+      .slider {
+        width: 1238px;
+        .slides_container {
+          .review {
+            min-width: calc(100% / 3 - 2rem);
+            max-width: calc(100% / 3 - 2rem);
+            margin: 1rem 1rem;
+          }
+        }
       }
     }
   }
 
-  .review_header {
-    text-align: center;
-  }
-  .review {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    background-color: white;
-    box-shadow: 0px 5px 24px rgba(0, 0, 0, 0.1);
-    padding: 1.375rem;
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    .review_author {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      .author_image {
-        margin-top: 0.25rem;
-        border-radius: 50%;
-        max-width: 44px;
-      }
-      .author_name {
-        font-weight: bold;
-      }
-      .author_city {
-        font-size: small;
-      }
-    }
-    .review_content {
-      font-size: smaller;
-    }
-  }
   .slider_indicators {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    .dot {
-      width: 0.5rem;
-      height: 0.5rem;
+    gap: 0.375rem;
+    .dot_wrapper {
+      cursor: pointer;
+      padding: 0.5rem;
       border-radius: 50%;
-      background-color: colors.$mid-grey;
-      &.active {
-        background-color: colors.$primary;
+      .dot {
+        background-color: typography.$mid-grey;
+        border-radius: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        &.active {
+          background-color: typography.$primary;
+        }
       }
     }
   }

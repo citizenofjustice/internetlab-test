@@ -39,7 +39,7 @@ const TextInput: React.FC<TextInputProps> = ({
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
           type={type}
-          className={`text-input ${inputValue ? "not_empty" : ""} ${
+          className={`text-input ${inputValue.length > 0 ? "not_empty" : ""} ${
             check?.isValid ? "valid" : "invalid"
           }`}
           autoComplete="off"

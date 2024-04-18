@@ -1,16 +1,20 @@
-@use "colors";
+@use "typography";
+@use "media";
 
 .contact_form {
-  padding: 1.5rem 1rem;
+  padding: 3.5rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+
   .contact_form_header {
     font-weight: bold;
     text-align: center;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.875rem;
   }
   .form {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
     .input_wrapper {
       width: 100%;
       position: relative;
@@ -23,42 +27,45 @@
         width: 100%;
         display: block;
         border-radius: 0.25rem;
-        border: 2px solid colors.$mid-grey;
-        background: colors.$white;
+        border: 2px solid typography.$mid-grey;
+        background: typography.$white;
         transition: all 0.3s ease;
         padding: 1rem;
         height: 4rem;
 
         &.valid,
         &:focus.valid {
-          border-color: colors.$green-success;
+          border-color: typography.$green-success;
         }
         &.invalid,
         &:focus.invalid {
-          border-color: colors.$dangerous;
+          border-color: typography.$dangerous;
         }
 
         &:focus {
           outline: none;
-          border-color: colors.$primary;
-          background-color: colors.$white;
+          border-color: typography.$primary;
+          background-color: typography.$white;
         }
         &:empty {
-          background-color: colors.$extralight-gray;
+          background-color: typography.$extralight-gray;
           &:focus {
-            background-color: colors.$white;
+            background-color: typography.$white;
           }
+        }
+        &.not_empty {
+          background-color: white;
         }
 
         &:focus + label {
           top: -0.8rem;
-          background-color: colors.$white;
+          background-color: typography.$white;
           padding: 2px 4px;
           transition: all 0.3s ease;
         }
         &.not_empty + label {
           top: -0.8rem;
-          background-color: colors.$white;
+          background-color: typography.$white;
           padding: 2px 4px;
           transition: all 0.3s ease;
         }
@@ -72,15 +79,38 @@
     .helper {
       font-size: 0.75rem;
       &.valid {
-        color: colors.$green-success;
+        color: typography.$green-success;
       }
       &.invalid {
-        color: colors.$dangerous;
+        color: typography.$dangerous;
+      }
+    }
+    .agreement_check {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      justify-content: flex-start;
+
+      input[type="checkbox"] {
+        width: 1.5rem;
+        height: 1.5rem;
       }
     }
     .button {
       margin: 0 auto;
-      width: fit-content;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: media.$tablet) {
+    .contact_form_header {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+      margin-bottom: 2.75rem;
+    }
+    .form {
+      grid-template-columns: repeat(2, 1fr);
+      align-self: flex-start;
     }
   }
 }

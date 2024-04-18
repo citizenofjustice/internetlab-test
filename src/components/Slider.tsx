@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { Review } from "./Reviews";
 import SliderIndicator from "./SliderIndicator";
+import useMediaQuery from "../hooks/useMediaQuery";
+import right from "../assets/images/chevronR.svg";
 
 interface SliderProps {
   slides: Review[];
@@ -12,6 +14,8 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const slideRef = useRef<HTMLDivElement>(null);
   const minSwipeDistance = 50;
+  const isTablet = useMediaQuery("(min-width: 768px)");
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -44,42 +48,47 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
     if (isLeftSwipe || isRightSwipe) isLeftSwipe ? nextSlide() : prevSlide();
   };
 
+  let slide = 100;
+  if (isTablet) slide = 100 / 2;
+  if (isDesktop) slide = 100 / 3;
+
+  const translateValue = currentIndex * -slide;
+
   return (
     <>
-      <div className="slider">
-        <button
-          onClick={prevSlide}
-          className="slider_button slider_button_prev"
-        >
-          {" "}
-          &lt;
-        </button>
-        <div
-          ref={slideRef}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
-          className="review slide"
-        >
-          <div className="review_author">
-            <img
-              className="author_image"
-              src={slides[currentIndex].avatar}
-              alt={`автор отзыва ${currentIndex}`}
-            />
-            <div>
-              <p className="author_name">{slides[currentIndex].name}</p>
-              <p className="author_city">{slides[currentIndex].city}</p>
-            </div>
+      <div className="slider_wrapper">
+        <span onClick={prevSlide} className="slider_button slider_button_prev">
+          <img src={right} alt="стрелка влево" />
+        </span>
+        <div className="slider">
+          <div
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            className="slides_container"
+            style={{ transform: `translateX(${translateValue}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div className="review" key={index} ref={slideRef}>
+                <div className="review_author">
+                  <img
+                    className="author_image"
+                    src={slide.avatar}
+                    alt={`автор отзыва ${currentIndex}`}
+                  />
+                  <div>
+                    <p className="author_name">{slide.name}</p>
+                    <p className="author_city">{slide.city}</p>
+                  </div>
+                </div>
+                <p className="review_content">{slide.reviewContent}</p>
+              </div>
+            ))}
           </div>
-          <p className="review_content">{slides[currentIndex].reviewContent}</p>
         </div>
-        <button
-          onClick={nextSlide}
-          className="slider_button slider_button_next"
-        >
-          &gt;
-        </button>
+        <span onClick={nextSlide} className="slider_button slider_button_next">
+          <img src={right} alt="стрелка вправо" />
+        </span>
       </div>
       <SliderIndicator
         slides={slides}

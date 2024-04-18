@@ -2,8 +2,10 @@ import third from "../assets/images/third.png";
 
 const Third = () => {
   return (
-    <section className="third">
-      <img src={third} alt="промо" />
+    <section id="third-block" className="third">
+      <div className="promo_wrapper">
+        <img src={third} alt="промо" />
+      </div>
       <div className="third_text_wrapper">
         <h2 className="third_header">Круто, ты дошел до третьего блока</h2>
         <div className="third_description">

@@ -1,4 +1,4 @@
-@use "colors";
+@use "typography";
 
 @use "reset.scss";
 @use "layout.scss";
@@ -11,6 +11,47 @@
 @use "respondents.scss";
 @use "form.scss";
 
+body {
+  font-family: typography.$font-family;
+}
+
 .button {
-  background-color: colors.$light-gray;
+  font-family: typography.$font-family;
+  font-weight: typography.$font-bold;
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  border: none;
+  &.button_primary {
+    background-color: typography.$primary;
+    color: typography.$white;
+    &:hover {
+      cursor: pointer;
+      background-color: typography.$primary-hover;
+    }
+  }
+  &.button_secondary {
+    background-color: typography.$light-gray;
+    color: typography.$black;
+    &:hover {
+      cursor: pointer;
+      color: typography.$black;
+      background-color: typography.$white;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Graphik LCG";
+  src: url("../fonts/GraphikLCG-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Graphik LCG";
+  src: url("../fonts/GraphikLCG-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
 }
