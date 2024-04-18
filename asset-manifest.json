@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/internetlab-test/static/css/main.fbed98f2.css",
-    "main.js": "/internetlab-test/static/js/main.ac227ecf.js",
+    "main.js": "/internetlab-test/static/js/main.5a61414d.js",
     "static/js/453.694c6110.chunk.js": "/internetlab-test/static/js/453.694c6110.chunk.js",
     "static/media/hero.jpg": "/internetlab-test/static/media/hero.adc6593cafa92d42310c.jpg",
     "static/media/driver.png": "/internetlab-test/static/media/driver.e4946b01026e06bc2b09.png",
@@ -24,11 +24,11 @@
     "static/media/menu.svg": "/internetlab-test/static/media/menu.ee8c5b677a419c13718d2b6411067a85.svg",
     "static/media/logo.svg": "/internetlab-test/static/media/logo.7e80e032a00adc57162ffa8cfefdee56.svg",
     "main.fbed98f2.css.map": "/internetlab-test/static/css/main.fbed98f2.css.map",
-    "main.ac227ecf.js.map": "/internetlab-test/static/js/main.ac227ecf.js.map",
+    "main.5a61414d.js.map": "/internetlab-test/static/js/main.5a61414d.js.map",
     "453.694c6110.chunk.js.map": "/internetlab-test/static/js/453.694c6110.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbed98f2.css",
-    "static/js/main.ac227ecf.js"
+    "static/js/main.5a61414d.js"
   ]
 }
