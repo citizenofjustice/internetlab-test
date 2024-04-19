@@ -23,8 +23,9 @@
       background-color: transparent;
       z-index: 1;
       font-weight: 400;
-      display: flex;
+      display: none;
       align-items: center;
+
       &:hover {
         cursor: pointer;
         filter: invert(29%) sepia(77%) saturate(2327%) hue-rotate(201deg)
@@ -131,7 +132,7 @@
 
     @media screen and (min-width: media.$desktop) {
       .slider {
-        width: 1238px;
+        width: 1024px;
         .slides_container {
           .review {
             min-width: calc(100% / 3 - 2rem);
@@ -139,6 +140,16 @@
             margin: 1rem 1rem;
           }
         }
+      }
+
+      .slider_button {
+        display: flex;
+      }
+    }
+
+    @media screen and (min-width: media.$big-desktop) {
+      .slider {
+        width: 1248px;
       }
     }
   }
