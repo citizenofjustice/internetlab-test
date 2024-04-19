@@ -35,6 +35,14 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <div>
       <div className="input_wrapper">
+        {id === "phone" && (
+          <span
+            className="first_number"
+            style={{ display: inputValue.length > 0 ? "block" : "none" }}
+          >
+            +7
+          </span>
+        )}
         <input
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}

@@ -78,10 +78,11 @@ const ContactForm = () => {
           validator={handlePhoneValidation}
           check={phoneCheck}
         />
-        <div className="agreement_check">
-          <input id="agreement" type="checkbox" required />
-          <label htmlFor="agreement">Согласен, отказываюсь</label>
-        </div>
+        <label className="checkbox agreement_check">
+          <input type="checkbox" />
+          <div className="checkbox_checkmark"></div>
+          <div className="checkbox_body">Согласен, отказываюсь</div>
+        </label>
         <Button type="submit" className="button_primary">
           Отправить
         </Button>
